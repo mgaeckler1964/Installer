@@ -1,0 +1,35 @@
+#include "setup.h"
+
+STRINGTABLE 
+{
+ ERR_CAPTION, "Error"
+ ERR_NO_INSTALL_PERM, "You do not have permissions, to install."
+ ERR_NO_UNINSTALL_PERM, "You do not have permissions, to uninstall."
+ ERR_READ_SETUP_XML, "Failed to read setup.xml"
+ ERR_BAD_SETUP_XML, "Wrong format (missing setup) of setup.xml"
+ ERR_BAD_SETUP_APP_INFO, "Wrong format (missing application) of setup.xml"
+ ERR_BAD_SETUP_BDE_INFO, "Wrong format (missing bde) of setup.xml"
+ ERR_BAD_SETUP_ALIAS_INFO, "Wrong format (missing alias) of setup.xml"
+ ERR_BAD_SETUP_UNINSTALL_INFO, "Wrong format (missing uninstall) of setup.xml"
+ ERR_BAD_SETUP_FILES_INFO,  "Wrong format (missing files) of setup.xml"
+ ERR_FAILED_ALIAS, "Failed to create alias"
+ ERR_FAILED_BDE, "Failed to init BDE"
+ ERR_FAILED_CREATE, "Error creating %s"
+ ERR_BAD_SETUP_RESOURCE_INFO, "Wrong format (missing resource) of setup.xml"
+
+ INSTALL_CAPTION, "Install"
+ INSTALL_START, "This will install %s on Your hard disk. Do You want to continue?"
+ INSTALL_CHECK, "Checking %s"
+ INSTALL_COPY, "Copying %s"
+ INSTALL_BDE, "Configuring BDE"
+ INSTALL_MENU, "Creating Short Cuts"
+ INSTALL_FINISH, "Finished"
+ INSTALL_END, "%s is now installed on Your hard disk."
+ INSTALL_EXEC, "Do You want to start it now?"
+
+ UNINSTALL_CAPTION, "Uninstall"
+ UNINSTALL_START, "This will remove %s from Your hard disk. Do You want to continue?"
+ UNINSTALL_MESSAGE, "This will remove\r\n%s\r\nfrom Your hard disk."
+ UNINSTALL_END, "%s removed from Your hard disk."
+ UNINSTALL_CLOSE, "Close"
+}

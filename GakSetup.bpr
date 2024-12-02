@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="..\..\object\installer\GakSetup.exe"/>
+    <OBJFILES value="..\..\object\installer\GakSetup.obj 
+      ..\..\object\installer\CollectorMain.obj 
+      ..\..\object\installer\ProgFilesFrm.obj ..\..\object\installer\IconFrm.obj 
+      ..\..\object\installer\DirSelFrm.obj ..\..\object\installer\ErrorFrm.obj 
+      ..\..\object\installer\Config.obj ..\..\object\installer\StatusFrm.obj 
+      ..\..\object\installer\common.obj"/>
+    <RESFILES value="GakSetup.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES) CollectorMain.dfm ProgFilesFrm.dfm IconFrm.dfm 
+      ..\GAKLIB\Repository\DirSelFrm.dfm ErrorFrm.dfm 
+      ..\GAKLIB\Repository\Config.dfm ..\GAKLIB\Repository\StatusFrm.dfm"/>
+    <LIBFILES value="..\..\Object\gaklib\gaklib_bcb.lib ..\..\Object\winlib\winlibBCB.lib"/>
+    <LIBRARIES value="VCLBDE50.lib Vcldb50.lib Vclx50.lib Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib Vclx50.lib Vcldb50.lib VCLBDE50.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Vcldb50.bpi vclado50.bpi ibsmp50.bpi 
+      VCLBDE50.bpi vcldbx50.bpi Qrpt50.bpi TeeUI50.bpi TeeDB50.bpi Tee50.bpi 
+      Dss50.bpi TeeQR50.bpi VCLIB50.bpi Vclmid50.bpi vclie50.bpi Inetdb50.bpi 
+      Inet50.bpi NMFast50.bpi webmid50.bpi bcbie50.bpi dclocx50.bpi 
+      bcb2kaxserver50.bpi"/>
+    <PATHCPP value=".;..\GAKLIB\Repository"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value="NDEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="GakSetup.cpp"/>
+    <INCLUDEPATH value="..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;.."/>
+    <LIBPATH value="..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk;$(BCB)\lib_uk\release"/>
+    <WARNINGS value="-w-par"/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-I..\GAKLIB\VCL_TOOLS -I..\GAKLIB\CTOOLS -I..\WINLIB 
+      -I..\GAKLIB\Repository -I$(BCB)\include -I$(BCB)\include\vcl 
+      -I..\gaklib\include -I.. -src_suffix cpp -DNDEBUG -boa"/>
+    <CFLAG1 value="-O2 -H=..\..\object\installer\installer.csm -Hc -w -Vx -Ve -X- -a8 -b- -d 
+      -k- -vi -c -tW -tWM"/>
+    <PFLAGS value="-N2..\..\object\installer -N0..\..\object\installer -$Y- -$L- -$D- -v 
+      -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\..\object\installer -D&quot;&quot; -aa -Tpe -GD -s -Gn -w"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="c0w32.obj sysinit.obj $(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES) $(LIBRARIES) import32.lib cp32mt.lib"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=1
+MinorVer=6
+Release=0
+Build=54
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1033
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=gak
+FileDescription=MG Setup Collector
+FileVersion=1.6.0.54
+InternalName=
+LegalCopyright=(c) 2011-2025 by Martin Gäckler - Linz
+LegalTrademarks=
+OriginalFilename=GakSetup.exe
+ProductName=MG Setup
+ProductVersion=1.6.0.0
+Comments=https://www.gaeckler.at/
+
+[HistoryLists\hlIncludePath]
+Count=9
+Item0=..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;..
+Item1=..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;..
+Item2=..\WINLIB;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;..
+Item3=..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;..
+Item4=C:\Windows\system32;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include
+Item5=..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include
+Item6=$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include
+Item7=C:\Windows\system32;$(BCB)\include;$(BCB)\include\vcl
+Item8=$(BCB)\include;$(BCB)\include\vcl
+
+[HistoryLists\hlLibraryPath]
+Count=10
+Item0=..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk;$(BCB)\lib_uk\release
+Item1=..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item2=..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item3=..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item4=$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item5=C:\Windows\system32;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item6=..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item7=C:\Windows\system32;$(BCB)\lib_uk\obj;$(BCB)\lib_uk
+Item8=$(BCB)\lib_ul\obj;$(BCB)\lib_uk
+Item9=$(BCB)\lib\obj;$(BCB)\lib
+
+[HistoryLists\hlDebugSourcePath]
+Count=1
+Item0=$(BCB)\source\vcl
+
+[HistoryLists\hlConditionals]
+Count=3
+Item0=NDEBUG
+Item1=NDEBUG;_DEBUG
+Item2=_DEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=1
+Item0=..\..\object\installer
+
+[HistoryLists\hlFinalOutputDir]
+Count=2
+Item0=..\..\object\installer\
+Item1=..\..\object\installer
+
+[Debugging]
+DebugSourceDirs=$(BCB)\source\vcl
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=0
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>

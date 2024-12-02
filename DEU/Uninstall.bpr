@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!-- C++Builder XML Project -->
+<PROJECT>
+  <MACROS>
+    <VERSION value="BCB.05.03"/>
+    <PROJECT value="..\..\..\Object\Installer\Uninstall.DEU"/>
+    <OBJFILES value="..\..\..\Object\Installer\DEU\Uninstall.obj"/>
+    <RESFILES value="UnInstallerMain.dfm ..\..\..\Object\Installer\DEU\setup_err.res 
+      ..\..\..\Object\Installer\DEU\Uninstall_DRC.res Uninstall.res"/>
+    <IDLFILES value=""/>
+    <IDLGENFILES value=""/>
+    <DEFFILE value=""/>
+    <RESDEPEN value="$(RESFILES)"/>
+    <LIBFILES value=""/>
+    <LIBRARIES value="Vcl50.lib"/>
+    <SPARELIBS value="Vcl50.lib"/>
+    <PACKAGES value="Vcl50.bpi Vclx50.bpi bcbsmp50.bpi Vcldb50.bpi vclado50.bpi ibsmp50.bpi 
+      VCLBDE50.bpi vcldbx50.bpi Qrpt50.bpi TeeUI50.bpi TeeDB50.bpi Tee50.bpi 
+      Dss50.bpi TeeQR50.bpi VCLIB50.bpi Vclmid50.bpi vclie50.bpi Inetdb50.bpi 
+      Inet50.bpi NMFast50.bpi webmid50.bpi bcbie50.bpi dclocx50.bpi 
+      bcb2kaxserver50.bpi"/>
+    <PATHCPP value=".;"/>
+    <PATHPAS value=".;"/>
+    <PATHRC value=".;..\..\OBJECT\INSTALLER"/>
+    <PATHASM value=".;"/>
+    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <LINKER value="tlink32"/>
+    <USERDEFINES value="NDEBUG"/>
+    <SYSDEFINES value="NO_STRICT"/>
+    <MAINSOURCE value="Uninstall.cpp"/>
+    <INCLUDEPATH value="..\..\OBJECT\INSTALLER;$(BCB)\include;.."/>
+    <LIBPATH value="..\..\OBJECT\INSTALLER;$(BCB)\lib"/>
+    <WARNINGS value=""/>
+  </MACROS>
+  <OPTIONS>
+    <IDLCFLAGS value="-src_suffix cpp -DNDEBUG -I..\..\OBJECT\INSTALLER -I$(BCB)\include -I.. -boa"/>
+    <CFLAG1 value="-WD -O2 -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi -c -w-par -w-8026 -w-8027 
+      -tW -tWM"/>
+    <PFLAGS value="-N2..\..\..\Object\Installer\DEU -N0..\..\..\Object\Installer\DEU -$Y- 
+      -$L- -$I- -$D- -$C- -v -JPHNE -M"/>
+    <RFLAGS value=""/>
+    <AFLAGS value="/mx /w2 /zn"/>
+    <LFLAGS value="-I..\..\..\Object\Installer\DEU -D&quot;&quot; -aa -Tpd -x -Gn -w"/>
+  </OPTIONS>
+  <LINKER>
+    <ALLOBJ value="$(OBJFILES)"/>
+    <ALLRES value="$(RESFILES)"/>
+    <ALLLIB value="$(LIBFILES)"/>
+  </LINKER>
+  <IDEOPTIONS>
+[Version Info]
+IncludeVerInfo=1
+AutoIncBuild=1
+MajorVer=1
+MinorVer=6
+Release=0
+Build=76
+Debug=0
+PreRelease=0
+Special=0
+Private=0
+DLL=0
+Locale=1031
+CodePage=1252
+
+[Version Info Keys]
+CompanyName=gak
+FileDescription=Application UnInstaller
+FileVersion=1.6.0.76
+InternalName=
+LegalCopyright=(c) 2011 - 2024 by Martin Gäckler - Linz
+LegalTrademarks=
+OriginalFilename=UNINSTALL.DEU
+ProductName=MG Setup
+ProductVersion=1.6.0.0
+Comments=https://www.gaeckler.at/
+
+[HistoryLists\hlIncludePath]
+Count=3
+Item0=..\..\OBJECT\INSTALLER;$(BCB)\include;..
+Item1=..\..\OBJECT\INSTALLER;$(BCB)\include
+Item2=$(BCB)\include
+
+[HistoryLists\hlLibraryPath]
+Count=2
+Item0=..\..\OBJECT\INSTALLER;$(BCB)\lib
+Item1=$(BCB)\lib
+
+[HistoryLists\hlConditionals]
+Count=1
+Item0=NDEBUG
+
+[HistoryLists\hlIntOutputDir]
+Count=2
+Item0=..\..\..\Object\Installer\DEU
+Item1=C:\CRESD\Object\Installer\DEU
+
+[HistoryLists\hlFinalOutputDir]
+Count=3
+Item0=..\..\..\Object\Installer\
+Item1=C:\CRESD\Object\Installer
+Item2=..\..\Installer\
+
+[Debugging]
+DebugSourceDirs=
+
+[Parameters]
+RunParams=
+HostApplication=
+RemoteHost=
+RemotePath=
+RemoteDebug=0
+
+[Compiler]
+ShowInfoMsgs=0
+LinkDebugVcl=1
+LinkCGLIB=0
+
+[CORBA]
+AddServerUnit=1
+AddClientUnit=1
+PrecompiledHeaders=1
+
+[Language]
+ActiveLang=
+ProjectLang=
+RootDir=
+  </IDEOPTIONS>
+</PROJECT>
