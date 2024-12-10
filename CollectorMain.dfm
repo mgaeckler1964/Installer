@@ -1,6 +1,6 @@
 object CollectorForm: TCollectorForm
-  Left = 532
-  Top = 468
+  Left = 337
+  Top = 366
   Width = 734
   Height = 378
   Caption = 'MG Setup Collector'

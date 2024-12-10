@@ -61,9 +61,9 @@
 IncludeVerInfo=1
 AutoIncBuild=1
 MajorVer=1
-MinorVer=6
+MinorVer=7
 Release=0
-Build=54
+Build=55
 Debug=0
 PreRelease=0
 Special=0
@@ -75,7 +75,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=gak
 FileDescription=MG Setup Collector
-FileVersion=1.6.0.54
+FileVersion=1.7.0.55
 InternalName=
 LegalCopyright=(c) 2011-2025 by Martin Gäckler - Linz
 LegalTrademarks=

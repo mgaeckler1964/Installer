@@ -425,10 +425,7 @@ void __fastcall TCollectorForm::FormCreate(TObject *)
 	{
 		fType.type = "csc_file";
 	}
-	if( fType.type_description.isEmpty() )
-	{
-		fType.type_description = "GAK Setup Collection";
-	}
+	fType.type_description = "GAK Setup Collection";
 
 	fType.cmd = "open";
 	fType.cmd_description = "&Open";
