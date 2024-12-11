@@ -29,14 +29,14 @@
     <PATHPAS value=".;"/>
     <PATHRC value=".;"/>
     <PATHASM value=".;"/>
-    <DEBUGLIBPATH value="$(BCB)\lib\debug"/>
-    <RELEASELIBPATH value="$(BCB)\lib\release"/>
+    <DEBUGLIBPATH value="$(BCB)\lib_uk\debug"/>
+    <RELEASELIBPATH value="$(BCB)\lib_uk\release"/>
     <LINKER value="tlink32"/>
     <USERDEFINES value="NDEBUG"/>
     <SYSDEFINES value="NO_STRICT"/>
     <MAINSOURCE value="GakSetup.cpp"/>
     <INCLUDEPATH value="..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\include;$(BCB)\include\vcl;..\gaklib\include;.."/>
-    <LIBPATH value="..\GAKLIB\VCL_TOOLS;..\GAKLIB\CTOOLS;..\WINLIB;..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk;$(BCB)\lib_uk\release"/>
+    <LIBPATH value="..\GAKLIB\Repository;$(BCB)\lib_uk\obj;$(BCB)\lib_uk"/>
     <WARNINGS value="-w-par"/>
   </MACROS>
   <OPTIONS>
