@@ -46,7 +46,7 @@ USEUNIT("common.cpp");
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
-	doEnableLog();
+	doEnableLogEx(gakLogging::llInfo);
 	try
 	{
 		Application->Initialize();

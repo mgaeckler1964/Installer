@@ -56,9 +56,9 @@ using namespace gak;
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR cmdLine, int)
 {
+	doEnableLogEx(gakLogging::llInfo);
 	try
 	{
-		doEnableLog();
 		Application->Initialize();
 		Application->Title = "MG Setup Collector";
 		Application->CreateForm(__classid(TCollectorForm), &CollectorForm);

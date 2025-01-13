@@ -43,7 +43,7 @@ USERC("setup_err.rc");
 //---------------------------------------------------------------------------
 WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int)
 {
-	doEnableLog();
+	doEnableLogEx(gakLogging::llInfo);
 	try
 	{
 		Application->Initialize();
