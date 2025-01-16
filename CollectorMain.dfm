@@ -1,8 +1,8 @@
 object CollectorForm: TCollectorForm
-  Left = 337
-  Top = 366
-  Width = 734
-  Height = 378
+  Left = 674
+  Top = 187
+  Width = 731
+  Height = 390
   Caption = 'MG Setup Collector'
   Color = clWhite
   Font.Charset = DEFAULT_CHARSET
@@ -70,7 +70,7 @@ object CollectorForm: TCollectorForm
   object RadioGroupBDE: TRadioGroup
     Left = 120
     Top = 112
-    Width = 593
+    Width = 580
     Height = 41
     Anchors = [akLeft, akTop, akRight]
     Caption = 'BDE'
@@ -85,13 +85,13 @@ object CollectorForm: TCollectorForm
   object EditDataPath: TEdit
     Left = 120
     Top = 192
-    Width = 513
+    Width = 490
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 5
   end
   object ButtonSelectDataPath: TButton
-    Left = 641
+    Left = 621
     Top = 192
     Width = 75
     Height = 25
@@ -103,7 +103,7 @@ object CollectorForm: TCollectorForm
   object EditApplicationTitle: TEdit
     Left = 120
     Top = 16
-    Width = 593
+    Width = 580
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
@@ -111,7 +111,7 @@ object CollectorForm: TCollectorForm
   object EditApplicationVersion: TEdit
     Left = 120
     Top = 48
-    Width = 593
+    Width = 580
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 1
@@ -119,7 +119,7 @@ object CollectorForm: TCollectorForm
   object EditAuthor: TEdit
     Left = 120
     Top = 80
-    Width = 593
+    Width = 580
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 2
@@ -144,8 +144,8 @@ object CollectorForm: TCollectorForm
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 305
-    Width = 701
+    Top = 312
+    Width = 715
     Height = 19
     Panels = <>
     SimplePanel = True
@@ -171,7 +171,7 @@ object CollectorForm: TCollectorForm
   object ComboBoxBDEalias: TComboBox
     Left = 120
     Top = 160
-    Width = 593
+    Width = 580
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     ItemHeight = 13

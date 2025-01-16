@@ -2,7 +2,7 @@ object InstallerForm: TInstallerForm
   Left = 424
   Top = 229
   Width = 726
-  Height = 260
+  Height = 276
   Caption = 'Application Installer'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -53,7 +53,7 @@ object InstallerForm: TInstallerForm
   object EditDestination: TEdit
     Left = 80
     Top = 16
-    Width = 546
+    Width = 563
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 0
@@ -62,7 +62,7 @@ object InstallerForm: TInstallerForm
   object EditBDE: TEdit
     Left = 80
     Top = 48
-    Width = 546
+    Width = 563
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 2
@@ -71,14 +71,14 @@ object InstallerForm: TInstallerForm
   object EditDataPath: TEdit
     Left = 80
     Top = 80
-    Width = 546
+    Width = 563
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 4
     OnChange = PathChanged
   end
   object ButtonSelectDestination: TButton
-    Left = 633
+    Left = 650
     Top = 16
     Width = 75
     Height = 25
@@ -88,7 +88,7 @@ object InstallerForm: TInstallerForm
     OnClick = SelectPath
   end
   object ButtonSelectBDE: TButton
-    Left = 633
+    Left = 650
     Top = 48
     Width = 75
     Height = 25
@@ -98,7 +98,7 @@ object InstallerForm: TInstallerForm
     OnClick = SelectPath
   end
   object ButtonSelectDataPath: TButton
-    Left = 633
+    Left = 650
     Top = 80
     Width = 75
     Height = 25
@@ -129,7 +129,7 @@ object InstallerForm: TInstallerForm
   object ProgressBar: TProgressBar
     Left = 8
     Top = 176
-    Width = 703
+    Width = 720
     Height = 16
     Anchors = [akLeft, akTop, akRight]
     Min = 0
@@ -139,14 +139,14 @@ object InstallerForm: TInstallerForm
   object EditStartMenu: TEdit
     Left = 80
     Top = 112
-    Width = 546
+    Width = 563
     Height = 21
     Anchors = [akLeft, akTop, akRight]
     TabOrder = 6
     OnChange = PathChanged
   end
   object ButtonSelectStartMenu: TButton
-    Left = 633
+    Left = 650
     Top = 112
     Width = 75
     Height = 25

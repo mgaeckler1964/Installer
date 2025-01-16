@@ -1,8 +1,8 @@
 object UninstallMainForm: TUninstallMainForm
-  Left = 677
-  Top = 200
+  Left = 739
+  Top = 246
   Width = 517
-  Height = 288
+  Height = 258
   Caption = 'Application Deinstaller'
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -17,7 +17,7 @@ object UninstallMainForm: TUninstallMainForm
   TextHeight = 13
   object ButtonRemove: TButton
     Left = 8
-    Top = 232
+    Top = 186
     Width = 75
     Height = 25
     Anchors = [akLeft, akBottom]
@@ -27,7 +27,7 @@ object UninstallMainForm: TUninstallMainForm
   end
   object ButtonCancel: TButton
     Left = 88
-    Top = 232
+    Top = 186
     Width = 75
     Height = 25
     Anchors = [akLeft, akBottom]
@@ -39,7 +39,7 @@ object UninstallMainForm: TUninstallMainForm
     Left = 8
     Top = 16
     Width = 489
-    Height = 201
+    Height = 161
     Anchors = [akLeft, akTop, akRight, akBottom]
     TabOrder = 2
   end
