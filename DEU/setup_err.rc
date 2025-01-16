@@ -33,6 +33,10 @@ STRINGTABLE
   ERR_FAILED_CREATE "Fehler beim Erzeugen von %s"
  /* ID:ERR_BAD_SETUP_RESOURCE_INFOOrig:"Wrong format (missing resource) of setup.xml"Status:1Created:40882.0787152778Modified:40882.0791782407PrevOrig:PrevCurr:Comment: */
   ERR_BAD_SETUP_RESOURCE_INFO "Falsches Format (resource fehlt) von setup.xml"
+ /* ERR_BAD_DESTINATION, "Undefined destination path. Did you try to install a 64-Bit Application on a 32-Bit System?"*/
+  ERR_BAD_DESTINATION, "Unbekannter Zielpfad. Versuchen Sie die Installation einer 64-Bit Anwendung auf einem 32-Bit System?"
+ /*  ERR_FAILED_CREATE_LOG, "Error creating logfile" */
+  ERR_FAILED_CREATE_LOG, "Fehler beim Erzeugen der Logdatei."
 
  /* ID:INSTALL_CAPTIONOrig:"Install"Status:1Created:40880.795162037Modified:40880.7957523148PrevOrig:PrevCurr:Comment: */
   INSTALL_CAPTION "Installation"

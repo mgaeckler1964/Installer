@@ -1352,7 +1352,7 @@ void TInstallerForm::checkInstall()
 
 		if( destinationPath.isEmpty() )
 		{
-			throw Exception("Undefined destination path. Did you try to install a 64-Bit Application on a 32-Bit System?");
+			throw Exception(LoadStr(ERR_BAD_DESTINATION));
 		}
 	}
 }
@@ -1388,7 +1388,7 @@ void TInstallerForm::doInstall()
 	if( !logOut.is_open() )
 	{
 		Application->MessageBox(
-			"Fehler beim Öffnen ", LoadStr( INSTALL_CAPTION ).c_str(),
+			LoadStr( ERR_FAILED_CREATE_LOG ).c_str(), LoadStr( INSTALL_CAPTION ).c_str(),
 			MB_OK
 		);
 /***/	return;

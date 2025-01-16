@@ -16,6 +16,8 @@ STRINGTABLE
  ERR_FAILED_BDE, "Failed to init BDE"
  ERR_FAILED_CREATE, "Error creating %s"
  ERR_BAD_SETUP_RESOURCE_INFO, "Wrong format (missing resource) of setup.xml"
+ ERR_BAD_DESTINATION, "Undefined destination path. Did you try to install a 64-Bit Application on a 32-Bit System?"
+ ERR_FAILED_CREATE_LOG, "Error creating logfile"
 
  INSTALL_CAPTION, "Install"
  INSTALL_START, "This will install %s on Your hard disk. Do You want to continue?"
