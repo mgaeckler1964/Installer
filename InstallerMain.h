@@ -122,6 +122,7 @@ private:	// Anwender-Deklarationen
 
 	bool makepath( const char *path, const gak::STRING &source );
 	void loadOldFiles( const gak::STRING &setupFile );
+	bool precheck();
 	void checkInstall();
 	void doInstall();
 public:		// Anwender-Deklarationen

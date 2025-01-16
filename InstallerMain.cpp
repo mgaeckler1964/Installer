@@ -318,6 +318,8 @@ void __fastcall TInstallerForm::PathChanged(TObject *)
 
 void __fastcall TInstallerForm::FormShow(TObject *)
 {
+	doEnterFunctionEx(gakLogging::llInfo, "TInstallerForm::FormShow");
+
 	bool	bdeAvail = false;
 
 	STRING	setupXml = makeFullPath( Application->ExeName.c_str(), "setup.xml" );
@@ -513,6 +515,25 @@ void __fastcall TInstallerForm::FormShow(TObject *)
 			EditDestination->Text = static_cast<const char *>(appPath);
 		}
 	}
+
+	/*
+	-----------------------------------------------------------------------
+		Check for valid target system
+	-----------------------------------------------------------------------
+	*/
+	if( precheck() )
+	{
+		doLogPositionEx(gakLogging::llInfo);
+		Application->MessageBox(
+			LoadStr( ERR_BAD_DESTINATION ).c_str(),
+			LoadStr( ERR_CAPTION ).c_str(),
+			MB_OK|MB_ICONSTOP
+		);
+		Close();
+		Application->Terminate();
+/*@*/	return;
+	}
+	doLogPositionEx(gakLogging::llInfo);
 
 	/*
 	-----------------------------------------------------------------------
@@ -1329,6 +1350,36 @@ void TInstallerForm::installMenu(
 		NULL, "open", EditStartMenu->Text.c_str(),
 		NULL, NULL, SW_SHOWNOACTIVATE
 	);
+}
+
+//---------------------------------------------------------------------------
+
+bool TInstallerForm::precheck()
+{
+	doEnterFunctionEx(gakLogging::llInfo, "TInstallerForm::precheck");
+	AppInfo	appInfo( m_appInfo );
+
+	for(
+		InstallerFiles::const_iterator it = m_installerFiles.cbegin(),
+			endIT = m_installerFiles.cend();
+		it != endIT;
+		++it
+	)
+	{
+		const STRING	sourceDir = it->getKey();
+		if( sourceDir == PROGRAM_DIR )
+		{
+			const STRING	destinationPath = appInfo.getDefaultDestination( it->getValue().destination );
+
+			if( destinationPath.isEmpty() )
+			{
+				doLogPositionEx(gakLogging::llInfo);
+				return true;
+			}
+		}
+	}
+	doLogPositionEx(gakLogging::llInfo);
+	return false;
 }
 
 //---------------------------------------------------------------------------

@@ -55,7 +55,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=7
 Release=0
-Build=89
+Build=92
 Debug=0
 PreRelease=0
 Special=0
@@ -67,7 +67,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=gak
 FileDescription=Application UnInstaller
-FileVersion=1.7.0.89
+FileVersion=1.7.0.92
 InternalName=
 LegalCopyright=(c) 2011 - 2025 by Martin Gäckler - Linz
 LegalTrademarks=
