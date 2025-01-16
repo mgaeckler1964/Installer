@@ -96,7 +96,7 @@ static BOOL CreateShortcut( LPSTR pszPath,
 					 LPSTR pszIcon,
 					 int   nCmdShow )
 {
-  doEnterFunction("CreateShortcut");
+  doEnterFunctionEx(gakLogging::llInfo,"CreateShortcut");
 
   LPSHELLLINK pShellLink;
   HRESULT hrCoInit;                        // OLE-Installations-Ergebnis
@@ -195,10 +195,11 @@ void TInstallerForm::cleanDirectory( const STRING &dirName )
 //---------------------------------------------------------------------------
 bool TInstallerForm::makepath( const char *path, const STRING &source )
 {
-	doEnterFunction("TInstallerForm::makepath");
+	doEnterFunctionEx(gakLogging::llInfo, "TInstallerForm::makepath");
 	bool	success = true;
 	char	*cp;
 
+	doLogValueEx( gakLogging::llInfo, path );
 	cp = const_cast<char *>(path);
 	while( 1 )
 	{
@@ -209,7 +210,8 @@ bool TInstallerForm::makepath( const char *path, const STRING &source )
 		}
 
 		*cp = 0;
-		if( (path[1] != ':' || strlen( path ) > 2 ) && !exists(path) )
+		size_t	len = strlen( path );
+		if( len && (path[1] != ':' ||  len > 3) && !exists(path) )
 		{
 			xml::Element	*directory = m_filesCopied->addObject(
 				new xml::Any( DIRECTORY_TAG )
@@ -219,6 +221,7 @@ bool TInstallerForm::makepath( const char *path, const STRING &source )
 			m_oldFiles.removeElementVal( path );
 			if( mkdir( path ) )
 			{
+				doLogMessageEx(gakLogging::llError, STRING("Cannot create ") + path );
 				success = false;
 			}
 		}
@@ -735,7 +738,7 @@ void TInstallerForm::copyFile(
 	const STRING &destinationPath
 )
 {
-	doEnterFunction("TInstallerForm::copyFile");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::copyFile");
 
 	logOut << __FILE__ << __LINE__ << ": iName=" << iName << std::endl << std::flush;
 	logOut << __FILE__ << __LINE__ << ": sourceOrig=" << sourceOrig << std::endl << std::flush;
@@ -865,7 +868,7 @@ void TInstallerForm::copyFiles(
 	const STRING &sourceOrig, DirectoryList &dirList, const STRING &destinationPath
 )
 {
-	doEnterFunction("TInstallerForm::copyFiles");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::copyFiles");
 	int				pos =ProgressBar->Position;
 	STRING			sourcePath = makeFullPath(
 		Application->ExeName.c_str(), sourceOrig
@@ -910,7 +913,7 @@ InstallMode TInstallerForm::copyData(
 	const STRING &sourceOrig, DirectoryList &dirList, const STRING &destinationPath
 )
 {
-	doEnterFunction("TInstallerForm::copyData");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::copyData");
 
 	InstallMode	installMode = check4Mode( sourceOrig, dirList, destinationPath );
 
@@ -926,7 +929,7 @@ InstallMode TInstallerForm::copyData(
 
 void TInstallerForm::loadOldFiles( const gak::STRING &setupFile )
 {
-	doEnterFunction("TInstallerForm::loadOldFiles");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::loadOldFiles");
 
 	if( exists( setupFile ) )
 	{
@@ -986,7 +989,7 @@ gak::STRING TInstallerForm::getPath( TEdit *editControl ) const
 
 bool TInstallerForm::installDatabase( std::ostream &logOut )
 {
-	doEnterFunction("TInstallerForm::installDatabase");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::installDatabase");
 	TDateTime		now = TDateTime::CurrentDateTime();
 	const STRING	newDataPath = getPath( EditDataPath );
 	F_STRING		oldDataPath, backupDataPath;
@@ -1154,7 +1157,7 @@ bool TInstallerForm::installDatabase( std::ostream &logOut )
 
 void TInstallerForm::installBDE( std::ostream &logOut, InstallMode installMode )
 {
-	doEnterFunction("TInstallerForm::installBDE");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::installBDE");
 
 	const STRING bdePath = getPath( EditBDE );
 	LabelStatus->Caption = LoadStr( INSTALL_BDE );
@@ -1222,7 +1225,7 @@ void TInstallerForm::installMenu(
 	gak::F_STRING *updateProgram, gak::F_STRING *updatePath
 )
 {
-	doEnterFunction("TInstallerForm::installMenu");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::installMenu");
 
 	F_STRING		destFile, workingDir;
 	const F_STRING	menuPath = getPath( EditStartMenu );
@@ -1330,6 +1333,32 @@ void TInstallerForm::installMenu(
 
 //---------------------------------------------------------------------------
 
+void TInstallerForm::checkInstall()
+{
+	AppInfo	appInfo( m_appInfo );
+	const F_STRING programDestination = getPath( EditDestination );
+
+	for(
+		InstallerFiles::const_iterator it = m_installerFiles.cbegin(),
+			endIT = m_installerFiles.cend();
+		it != endIT;
+		++it
+	)
+	{
+		const STRING	sourceDir = it->getKey();
+		const STRING	destinationPath = sourceDir == PROGRAM_DIR
+			? programDestination
+			: appInfo.getDefaultDestination( it->getValue().destination );
+
+		if( destinationPath.isEmpty() )
+		{
+			throw Exception("Undefined destination path. Did you try to install a 64-Bit Application on a 32-Bit System?");
+		}
+	}
+}
+
+//---------------------------------------------------------------------------
+
 void TInstallerForm::doInstall()
 {
 	AppInfo	appInfo( m_appInfo );
@@ -1364,7 +1393,7 @@ void TInstallerForm::doInstall()
 		);
 /***/	return;
 	}
-	
+
 	xml::Element	*file = m_filesCopied->addObject( new xml::Any( FILE_TAG ) );
 	file->setStringAttribute( DESTINATION_ATTR, logFile );
 	file->setStringAttribute( "fileMode", "new" );
@@ -1402,7 +1431,7 @@ void TInstallerForm::doInstall()
 
 		logOut	<< __FILE__ << __LINE__ << ": Installing " << sourceDir
 				<< " to " << destinationPath << std::endl << std::flush;
-
+		doLogValueEx( gakLogging::llInfo, destinationPath );
 		DirectoryList	programSource;
 		programSource.dirtree(
 			makeFullPath( Application->ExeName.c_str(), sourceDir )
@@ -1502,10 +1531,11 @@ void TInstallerForm::doInstall()
 //---------------------------------------------------------------------------
 void __fastcall TInstallerForm::ButtonInstallClick(TObject *)
 {
-	doEnterFunction("TInstallerForm::ButtonInstallClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TInstallerForm::ButtonInstallClick");
 
 	try
 	{
+		checkInstall();
 		doInstall();
 	}
 	catch( std::exception &e )

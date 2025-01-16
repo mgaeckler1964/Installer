@@ -80,7 +80,7 @@ void __fastcall TCollectorForm::ButtonIconsClick(TObject *)
 
 void TCollectorForm::readApplicationInfo()
 {
-	doEnterFunction("TCollectorForm::readApplicationInfo");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::readApplicationInfo");
 	xml::Element *appInfoXml = m_setupElement->getElement( APPLICATION_TAG );
 	if( appInfoXml )
 	{
@@ -108,7 +108,7 @@ void TCollectorForm::readApplicationInfo()
 
 void TCollectorForm::saveApplicationInfo()
 {
-	doEnterFunction("TCollectorForm::saveApplicationInfo");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::saveApplicationInfo");
 	xml::Element *appInfoXml = m_setupElement->getElement( APPLICATION_TAG );
 	if( !appInfoXml )
 	{
@@ -135,7 +135,7 @@ void TCollectorForm::saveApplicationInfo()
 
 void TCollectorForm::readBdeInfo( const gak::STRING &installerFileName )
 {
-	doEnterFunction("TCollectorForm::readBdeInfo");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::readBdeInfo");
 	xml::Element *bdeInfo = m_setupElement->getElement( BDE_TAG );
 	if( bdeInfo )
 	{
@@ -191,7 +191,7 @@ void TCollectorForm::readBdeInfo( const gak::STRING &installerFileName )
 
 void TCollectorForm::saveBdeInfo( const gak::STRING &installerFileName )
 {
-	doEnterFunction("TCollectorForm::saveBdeInfo");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::saveBdeInfo");
 	xml::Element *bdeInfo = m_setupElement->getElement( BDE_TAG );
 	if( RadioGroupBDE->ItemIndex != 2 )
 	{
@@ -239,7 +239,7 @@ void TCollectorForm::saveBdeInfo( const gak::STRING &installerFileName )
 //---------------------------------------------------------------------------
 void TCollectorForm::readIcons()
 {
-	doEnterFunction("TCollectorForm::readIcons");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::readIcons");
 	xml::Element *iconInfo = m_setupElement->getElement( ICONS_TAG );
 	if( iconInfo )
 	{
@@ -288,7 +288,7 @@ void TCollectorForm::readIcons()
 //---------------------------------------------------------------------------
 void TCollectorForm::saveIcons()
 {
-	doEnterFunction("TCollectorForm::saveIcons");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::saveIcons");
 	xml::Element *iconInfo = m_setupElement->getElement( ICONS_TAG );
 	if( !iconInfo )
 	{
@@ -326,7 +326,7 @@ void TCollectorForm::saveIcons()
 //---------------------------------------------------------------------------
 void TCollectorForm::readSource( const gak::STRING &installerFileName )
 {
-	doEnterFunction("TCollectorForm::readSource");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::readSource");
 	xml::Element *sourceInfo = m_setupElement->getElement( SOURCE_TAG );
 	if( sourceInfo )
 	{
@@ -349,7 +349,7 @@ void TCollectorForm::readSource( const gak::STRING &installerFileName )
 //---------------------------------------------------------------------------
 void TCollectorForm::saveSource( const gak::STRING &installerFileName )
 {
-	doEnterFunction("TCollectorForm::saveSource");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::saveSource");
 	saveInstallerFiles(
 		installerFileName, m_setupElement,
 		ProgramFilesForm->getInstallerFiles()
@@ -358,7 +358,7 @@ void TCollectorForm::saveSource( const gak::STRING &installerFileName )
 //---------------------------------------------------------------------------
 void TCollectorForm::openFile( const gak::STRING &installerFileName )
 {
-	doEnterFunction("TCollectorForm::openFile");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::openFile");
 	if( m_theSetupDoc )
 	{
 		SaveClick( NULL );
@@ -402,7 +402,7 @@ void TCollectorForm::openFile( const gak::STRING &installerFileName )
 
 void __fastcall TCollectorForm::OpenClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::OpenClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::OpenClick");
 	if( OpenDialog->Execute() )
 	{
 		openFile( OpenDialog->FileName.c_str() );
@@ -414,7 +414,7 @@ void __fastcall TCollectorForm::OpenClick(TObject *Sender)
 
 void __fastcall TCollectorForm::FormCreate(TObject *)
 {
-	doEnterFunction("TCollectorForm::FormCreate");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::FormCreate");
 	m_theSetupDoc = NULL;
 	m_setupElement = NULL;
 
@@ -460,7 +460,7 @@ void __fastcall TCollectorForm::FormCreate(TObject *)
 //---------------------------------------------------------------------------
 STRING TCollectorForm::getDataPath( void )
 {
-	doEnterFunction("TCollectorForm::getDataPath");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::getDataPath");
 	STRING	dataPath = EditDataPath->Text.c_str();
 
 	doLogValue(dataPath);
@@ -480,7 +480,7 @@ STRING TCollectorForm::getDataPath( void )
 
 void __fastcall TCollectorForm::SaveClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::SaveClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::SaveClick");
 	if( !m_theSetupDoc )
 	{
 		m_theSetupDoc = new xml::Document( "" );
@@ -509,7 +509,7 @@ void __fastcall TCollectorForm::SaveClick(TObject *Sender)
 
 void __fastcall TCollectorForm::SaveAsClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::SaveAsClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::SaveAsClick");
 	if( !m_theSetupDoc )
 	{
 		m_theSetupDoc = new xml::Document( "" );
@@ -526,7 +526,7 @@ void __fastcall TCollectorForm::SaveAsClick(TObject *Sender)
 
 void __fastcall TCollectorForm::ButtonSelectDataPathClick(TObject *)
 {
-	doEnterFunction("TCollectorForm::ButtonSelectDataPathClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::ButtonSelectDataPathClick");
 	AnsiString dataPath = static_cast<const char *>(getDataPath());
 	if( DirectorySelector->ShowModal( dataPath ) == mrOk )
 	{
@@ -537,7 +537,7 @@ void __fastcall TCollectorForm::ButtonSelectDataPathClick(TObject *)
 
 void __fastcall TCollectorForm::ExitClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::ExitClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::ExitClick");
 	if( m_theSetupDoc )
 	{
 		SaveClick( Sender );
@@ -547,7 +547,7 @@ void __fastcall TCollectorForm::ExitClick(TObject *Sender)
 //---------------------------------------------------------------------------
 void TCollectorForm::cleanDirectory( const STRING &dirName )
 {
-	doEnterFunction("TCollectorForm::cleanDirectory");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::cleanDirectory");
 
 	STRING		  	fileName;
 	DirectoryList	content;
@@ -577,7 +577,7 @@ void TCollectorForm::cleanDirectory( const STRING &dirName )
 //---------------------------------------------------------------------------
 static void myCopy( const STRING &source, const STRING &destination )
 {
-	doEnterFunction("TCollectorForm::myCopy");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::myCopy");
 
 	StatusForm->setStatus( "Copying", source );
 
@@ -611,7 +611,7 @@ static void myCopy( const STRING &source, const STRING &destination )
 //---------------------------------------------------------------------------
 bool TCollectorForm::checkSettings()
 {
-	doEnterFunction("TCollectorForm::checkSettings");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::checkSettings");
 
 	if( EditApplicationTitle->Text == "" )
 	{
@@ -683,7 +683,7 @@ bool TCollectorForm::checkSettings()
 
 void TCollectorForm::copyInstallerFiles( const gak::STRING &directory, const gak::STRING &pattern )
 {
-	doEnterFunction("TCollectorForm::copyInstallerFiles");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::copyInstallerFiles");
 	DirectoryList	content;
 	const STRING	appExe = Application->ExeName.c_str();
 
@@ -704,7 +704,7 @@ void TCollectorForm::copyInstallerFiles( const gak::STRING &directory, const gak
 
 void TCollectorForm::copyBdeFiles( const gak::STRING &directory )
 {
-	doEnterFunction("TCollectorForm::copyBdeFiles");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::copyBdeFiles");
 	if( RadioGroupBDE->ItemIndex != 2 )
 	{
 		DirectoryList	content;
@@ -749,7 +749,7 @@ void TCollectorForm::copyBdeFiles( const gak::STRING &directory )
 
 void TCollectorForm::copyDatabase( const gak::STRING &dataPath, const gak::STRING &directory )
 {
-	doEnterFunction("TCollectorForm::copyDatabase");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::copyDatabase");
 	if( !dataPath.isEmpty() )
 	{
 		DirectoryList	content;
@@ -802,7 +802,7 @@ void TCollectorForm::copyDatabase( const gak::STRING &dataPath, const gak::STRIN
 
 void TCollectorForm::createSchemaXml( const gak::STRING &dataPath, const gak::STRING &directory )
 {
-	doEnterFunction("TCollectorForm::createSchemaXml");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::createSchemaXml");
 	if( !dataPath.isEmpty() )
 	{
 		StatusForm->setStatus( "Schema", directory );
@@ -852,7 +852,7 @@ void TCollectorForm::createSchemaXml( const gak::STRING &dataPath, const gak::ST
 
 void TCollectorForm::copyProgramFiles( const gak::STRING &directory )
 {
-	doEnterFunction("TCollectorForm::copyProgramFiles");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::copyProgramFiles");
 	const InstallerFiles &files = ProgramFilesForm->getInstallerFiles();
 
 	for(
@@ -895,7 +895,7 @@ void TCollectorForm::copyProgramFiles( const gak::STRING &directory )
 
 void __fastcall TCollectorForm::ButtonCreateInstallerClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::ButtonCreateInstallerClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::ButtonCreateInstallerClick");
 	if( !checkSettings() )
 	{
 		return;
@@ -1055,7 +1055,7 @@ void __fastcall TCollectorForm::ButtonCreateInstallerClick(TObject *Sender)
 
 void __fastcall TCollectorForm::NewClick(TObject *Sender)
 {
-	doEnterFunction("TCollectorForm::NewClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::NewClick");
 	if( m_theSetupDoc )
 	{
 		SaveClick( Sender );
@@ -1089,7 +1089,7 @@ void __fastcall TCollectorForm::NewClick(TObject *Sender)
 
 STRING TCollectorForm::getTargetPath( void )
 {
-	doEnterFunction("TCollectorForm::getTargetPath");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::getTargetPath");
 	size_t		slashPos;
 	STRING		targetPath;
 
@@ -1126,7 +1126,7 @@ STRING TCollectorForm::getTargetPath( void )
 //---------------------------------------------------------------------------
 void TCollectorForm::setTargetPath( const AnsiString &newTarget )
 {
-	doEnterFunction("TCollectorForm::setTargetPath");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::setTargetPath");
 	TRegistry	*newRegistry = new TRegistry;
 	if( newRegistry->OpenKey( "Software\\GAK\\Installer", true ) )
 	{
@@ -1138,7 +1138,7 @@ void TCollectorForm::setTargetPath( const AnsiString &newTarget )
 //---------------------------------------------------------------------------
 void __fastcall TCollectorForm::TargetDirectoryClick(TObject *)
 {
-	doEnterFunction("TCollectorForm::TargetDirectoryClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TCollectorForm::TargetDirectoryClick");
 	AnsiString targetPath = static_cast<const char *>(getTargetPath());
 	if( DirectorySelector->ShowModal( targetPath ) == mrOk )
 	{

@@ -35,8 +35,8 @@
   </MACROS>
   <OPTIONS>
     <IDLCFLAGS value="-src_suffix cpp -DNDEBUG -I..\..\OBJECT\INSTALLER -I$(BCB)\include -I.. -boa"/>
-    <CFLAG1 value="-WD -O2 -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi -c -w-par -w-8026 -w-8027 
-      -tW -tWM"/>
+    <CFLAG1 value="-WD -O2 -Q -w -Vx -Ve -x- -RT- -X -a8 -b- -k- -vi -c -w-par -w-8026 
+      -w-8027 -tW -tWM"/>
     <PFLAGS value="-N2..\..\..\Object\Installer\DEU -N0..\..\..\Object\Installer\DEU -$Y- 
       -$L- -$I- -$D- -$C- -v -JPHNE -M"/>
     <RFLAGS value=""/>
@@ -55,7 +55,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=7
 Release=0
-Build=81
+Build=84
 Debug=0
 PreRelease=0
 Special=0
@@ -67,7 +67,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=gak
 FileDescription=Application UnInstaller
-FileVersion=1.7.0.81
+FileVersion=1.7.0.84
 InternalName=
 LegalCopyright=(c) 2011 - 2024 by Martin Gäckler - Linz
 LegalTrademarks=
@@ -113,7 +113,7 @@ RemotePath=
 RemoteDebug=0
 
 [Compiler]
-ShowInfoMsgs=0
+ShowInfoMsgs=1
 LinkDebugVcl=1
 LinkCGLIB=0
 

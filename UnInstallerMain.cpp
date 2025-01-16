@@ -170,7 +170,7 @@ void __fastcall TUninstallMainForm::FormShow(TObject *)
 //---------------------------------------------------------------------------
 void __fastcall TUninstallMainForm::ButtonRemoveClick(TObject *)
 {
-	doEnterFunction("TUninstallMainForm::ButtonRemoveClick");
+	doEnterFunctionEx(gakLogging::llInfo,"TUninstallMainForm::ButtonRemoveClick");
 
 	STRING	tag, source;
 	int		result;
