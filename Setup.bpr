@@ -59,7 +59,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=7
 Release=0
-Build=102
+Build=105
 Debug=0
 PreRelease=0
 Special=0
@@ -71,7 +71,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=GAK
 FileDescription=Application Installer
-FileVersion=1.7.0.102
+FileVersion=1.7.0.105
 InternalName=
 LegalCopyright=(c) 2011 - 2025 by Martin Gäckler - Linz
 LegalTrademarks=

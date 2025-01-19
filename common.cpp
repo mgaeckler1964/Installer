@@ -261,14 +261,18 @@ gak::STRING AppInfo::getCommonStartMenu()
 
 gak::STRING AppInfo::getDefaultDestination( const gak::STRING &groupDestination ) const
 {
+	doEnterFunctionEx(gakLogging::llInfo, "AppInfo::getDefaultDestination");
+
 	STRING	defaultDestination;
 
 	if( groupDestination == VSTPRESETS )
 	{
 		defaultDestination = getCommonAppData();
+		doLogValueEx(gakLogging::llInfo, defaultDestination );
 		if( !defaultDestination.isEmpty() )
 		{
 			defaultDestination += DIRECTORY_DELIMITER_STRING "VST3 Presets";
+			doLogValueEx(gakLogging::llInfo, defaultDestination );
 		}
 	}
 	else
@@ -286,23 +290,27 @@ gak::STRING AppInfo::getDefaultDestination( const gak::STRING &groupDestination 
 			&& theRegistry->ValueExists( "ProgramFilesDir" ) )
 			{
 				defaultDestination = theRegistry->ReadString( "ProgramFilesDir" ).c_str();
+				doLogValueEx(gakLogging::llInfo, defaultDestination );
 			}
 			else if( groupDestination == PROGRAM64
 			&& theRegistry->ValueExists( "ProgramW6432Dir" ) )
 			{
 				defaultDestination = theRegistry->ReadString( "ProgramW6432Dir" ).c_str();
+				doLogValueEx(gakLogging::llInfo, defaultDestination );
 			}
 			else if( groupDestination == VST32
 			&& theRegistry->ValueExists( "CommonFilesDir" ) )
 			{
 				defaultDestination = theRegistry->ReadString( "CommonFilesDir" ).c_str();
 				defaultDestination += DIRECTORY_DELIMITER_STRING "VST3";
+				doLogValueEx(gakLogging::llInfo, defaultDestination );
 			}
 			else if( groupDestination == VST64
 			&& theRegistry->ValueExists( "CommonW6432Dir" ) )
 			{
 				defaultDestination = theRegistry->ReadString( "CommonW6432Dir" ).c_str();
 				defaultDestination += DIRECTORY_DELIMITER_STRING "VST3";
+				doLogValueEx(gakLogging::llInfo, defaultDestination );
 			}
 
 			theRegistry->CloseKey();
@@ -312,7 +320,9 @@ gak::STRING AppInfo::getDefaultDestination( const gak::STRING &groupDestination 
 	if( !defaultDestination.isEmpty() )
 	{
 		defaultDestination += DIRECTORY_DELIMITER_STRING + author + DIRECTORY_DELIMITER + title;
+		doLogValueEx(gakLogging::llInfo, defaultDestination );
 	}
+	doLogValueEx(gakLogging::llInfo, defaultDestination );
 	return defaultDestination;
 }
 
